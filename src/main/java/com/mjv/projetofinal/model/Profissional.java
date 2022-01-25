@@ -1,13 +1,14 @@
 package com.mjv.projetofinal.model;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 @Entity
@@ -18,26 +19,39 @@ public class Profissional {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(nullable = false, length = 150)
+	@Column(nullable = false, length = 100)
 	private String nomeCompleto;
 	
-	@Column(nullable = false, length = 50)
-	private String area;
-	
-	@Column(nullable = false, length = 30 )
+	@Column(nullable = false, length = 30)
+	private String areaProf;
+
+	@Column(nullable = false, length = 30)
 	private String email;
 	
+	@Column(nullable = false, length = 12)
+	private String telefone;
+	
+	@Column
+	@JsonFormat(pattern = "dd/MM/yyyy")
+	private LocalDate dataNascimento;
+	
+	@Column(nullable = false , length = 12)
+	private String celular;
+	
 	@Column(nullable = false, length = 50)
+	private String linkedin;
+	
+	@Column(nullable = false, length = 50)
+	private String github;
+	
+	@Column(nullable = false, length = 30)
 	private String perfilDiversi;
 	
 	@Column(nullable = false, length = 300)
 	private String biografia;
-	
-	@Column
+
+	@Column(nullable = false, length = 100)
 	private String foto;
-	
-	@Embedded
-	private Endereco endereco;
 
 	public Long getId() {
 		return id;
@@ -55,12 +69,12 @@ public class Profissional {
 		this.nomeCompleto = nomeCompleto;
 	}
 
-	public String getArea() {
-		return area;
+	public String getAreaProf() {
+		return areaProf;
 	}
 
-	public void setArea(String area) {
-		this.area = area;
+	public void setAreaProf(String areaProf) {
+		this.areaProf = areaProf;
 	}
 
 	public String getEmail() {
@@ -69,6 +83,46 @@ public class Profissional {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+	public String getCelular() {
+		return celular;
+	}
+
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
+
+	public String getLinkedin() {
+		return linkedin;
+	}
+
+	public void setLinkedin(String linkedin) {
+		this.linkedin = linkedin;
+	}
+
+	public String getGithub() {
+		return github;
+	}
+
+	public void setGithub(String github) {
+		this.github = github;
 	}
 
 	public String getPerfilDiversi() {
@@ -87,14 +141,6 @@ public class Profissional {
 		this.biografia = biografia;
 	}
 
-	public Endereco getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
-
 	public String getFoto() {
 		return foto;
 	}
@@ -102,5 +148,22 @@ public class Profissional {
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
+	
+	/*@Column
+	@JsonFormat(pattern = "dd-MM-yyyy")
+	private LocalDate dataNascimento;*/
+	
+	//List<Profissional> profissional = new ArrayList<Profissional>();
+
+
+	
+	/*public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}*/
+	
 	
 }

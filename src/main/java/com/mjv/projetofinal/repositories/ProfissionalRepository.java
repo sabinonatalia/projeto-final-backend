@@ -10,5 +10,5 @@ import com.mjv.projetofinal.model.Profissional;
 @Repository
 public interface ProfissionalRepository extends JpaRepository<Profissional, Long> {
 
-	public List <Profissional> findAllByAreaContainingIgnoreCase(String area);
+	public List <Profissional> findAllByAreaProfContainingIgnoreCase(String areaProf);
 }

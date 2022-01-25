@@ -21,7 +21,7 @@ import com.mjv.projetofinal.model.Profissional;
 import com.mjv.projetofinal.repositories.ProfissionalRepository;
 
 @RestController
-@RequestMapping("/easy-diversitech") 
+@RequestMapping("/easyjob-diversitech/profissionais") 
 @CrossOrigin(origins = "*", allowedHeaders = "*") 
 public class ProfissionalController {
 

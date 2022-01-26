@@ -1,5 +1,5 @@
 <h2>Easy Job Diversitech</h2>
-Este é um projeto desenvolvido durante o curso da MJV School, <a
+Este é um projeto desenvolvido durante o curso da MJV School Java, <a
   href="https://github.com/sabinonatalia/projeto-final-frontend">clique aqui</a> para acessar o repositório
 front-end.
 

@@ -17,6 +17,7 @@ public class UsuarioService {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
+	//cadastrar usuario
 	public Usuario CadastrarUsuario(Usuario usuario) {
 		BCryptPasswordEncoder enconder = new BCryptPasswordEncoder();
 
@@ -26,9 +27,10 @@ public class UsuarioService {
 		return usuarioRepository.save(usuario);
 	}
 	
+	//logar
 	public Optional<UsuarioLogin> logar(Optional<UsuarioLogin> user) {
 		BCryptPasswordEncoder enconder = new BCryptPasswordEncoder();
-		Optional<Usuario> usuario = usuarioRepository.findByUsuario(user.get().getUsuario());
+		Optional<Usuario> usuario = usuarioRepository.findByEmail(user.get().getEmail());
 
 		if (usuario.isPresent()) {
 			if (enconder.matches(user.get().getSenha(), usuario.get().getSenha())) {
@@ -41,7 +43,7 @@ public class UsuarioService {
 				user.get().setId(usuario.get().getId());
 				user.get().setNome(usuario.get().getNome());
 				user.get().setSobrenome(usuario.get().getSobrenome());
-				user.get().setEmail(usuario.get().getEmail());
+				user.get().setUsuario(usuario.get().getUsuario());
 				user.get().setTipo(usuario.get().getTipo());				
 
 				return user;

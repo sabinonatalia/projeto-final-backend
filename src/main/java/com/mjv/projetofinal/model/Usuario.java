@@ -94,6 +94,10 @@ public class Usuario {
 		return null;
 	}
 
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
 	
 	
 }

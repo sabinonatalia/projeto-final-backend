@@ -19,7 +19,7 @@ import com.mjv.projetofinal.repositories.UsuarioRepository;
 import com.mjv.projetofinal.service.UsuarioService;
 
 @RestController
-@RequestMapping("/easy-diversitech")
+@RequestMapping("/easyjob")
 @CrossOrigin(origins = "*", allowedHeaders = "*") 
 public class UsuarioController {
 
@@ -35,7 +35,7 @@ public class UsuarioController {
 	}
 	
 	@PostMapping("/logar")
-	public ResponseEntity<UsuarioLogin> Autentication(@RequestBody Optional<UsuarioLogin> usuario){
+	public ResponseEntity<UsuarioLogin> logar(@RequestBody Optional<UsuarioLogin> usuario){
 		return usuarioService.logar(usuario).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}

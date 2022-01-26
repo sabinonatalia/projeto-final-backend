@@ -31,21 +31,34 @@ public class Profissional {
 	@Column(nullable = false, length = 12)
 	private String telefone;
 	
+	@Column(nullable = false , length = 12)
+	private String celular;
+	
+	@Column(nullable = false , length = 50)
+	private String rua;
+	
+	@Column(nullable = false , length = 5)
+	private Integer num;
+	
+	@Column(nullable = false , length = 50)
+	private String bairro;
+	
+	@Column(nullable = false , length = 50)
+	private String cidade;
+	
+	@Column(nullable = false , length = 30)
+	private String estado;
+	
+	@Column(nullable = false , length = 30)
+	private String genero;
+	
+	@Column(nullable = false , length = 30)
+	private String perfilDiversidade;
+	
 	@Column
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataNascimento;
 	
-	@Column(nullable = false , length = 12)
-	private String celular;
-	
-	@Column(nullable = false, length = 50)
-	private String linkedin;
-	
-	@Column(nullable = false, length = 50)
-	private String github;
-	
-	@Column(nullable = false, length = 30)
-	private String perfilDiversi;
 	
 	@Column(nullable = false, length = 300)
 	private String biografia;
@@ -93,14 +106,6 @@ public class Profissional {
 		this.telefone = telefone;
 	}
 
-	public LocalDate getDataNascimento() {
-		return dataNascimento;
-	}
-
-	public void setDataNascimento(LocalDate dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
-
 	public String getCelular() {
 		return celular;
 	}
@@ -109,28 +114,68 @@ public class Profissional {
 		this.celular = celular;
 	}
 
-	public String getLinkedin() {
-		return linkedin;
+	public String getRua() {
+		return rua;
 	}
 
-	public void setLinkedin(String linkedin) {
-		this.linkedin = linkedin;
+	public void setRua(String rua) {
+		this.rua = rua;
 	}
 
-	public String getGithub() {
-		return github;
+	public Integer getNum() {
+		return num;
 	}
 
-	public void setGithub(String github) {
-		this.github = github;
+	public void setNum(Integer num) {
+		this.num = num;
 	}
 
-	public String getPerfilDiversi() {
-		return perfilDiversi;
+	public String getBairro() {
+		return bairro;
 	}
 
-	public void setPerfilDiversi(String perfilDiversi) {
-		this.perfilDiversi = perfilDiversi;
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+	public String getPerfilDiversidade() {
+		return perfilDiversidade;
+	}
+
+	public void setPerfilDiversidade(String perfilDiversidade) {
+		this.perfilDiversidade = perfilDiversidade;
+	}
+
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 
 	public String getBiografia() {
@@ -148,22 +193,6 @@ public class Profissional {
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
-	
-	/*@Column
-	@JsonFormat(pattern = "dd-MM-yyyy")
-	private LocalDate dataNascimento;*/
-	
-	//List<Profissional> profissional = new ArrayList<Profissional>();
 
-
-	
-	/*public LocalDate getDataNascimento() {
-		return dataNascimento;
-	}
-
-	public void setDataNascimento(LocalDate dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}*/
-	
 	
 }

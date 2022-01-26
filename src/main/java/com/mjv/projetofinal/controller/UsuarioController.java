@@ -19,7 +19,7 @@ import com.mjv.projetofinal.repositories.UsuarioRepository;
 import com.mjv.projetofinal.service.UsuarioService;
 
 @RestController
-@RequestMapping("/easyjob")
+@RequestMapping("/easyjob-diversitech")
 @CrossOrigin(origins = "*", allowedHeaders = "*") 
 public class UsuarioController {
 
